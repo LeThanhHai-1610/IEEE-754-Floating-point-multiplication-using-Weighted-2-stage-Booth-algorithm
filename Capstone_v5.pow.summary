@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Sat May 29 17:16:50 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Capstone_v5
+Top-level Entity Name : Capstone_v5
+Family : Cyclone V
+Device : 5CSXFC6D6F31C6
+Power Models : Final
+Total Thermal Power Dissipation : 424.62 mW
+Core Dynamic Thermal Power Dissipation : 0.00 mW
+Core Static Thermal Power Dissipation : 411.25 mW
+I/O Thermal Power Dissipation : 13.36 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

@@ -1,0 +1,914 @@
+Analysis & Synthesis report for Capstone_v5
+Sat Jun 26 11:10:50 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (No Restructuring Performed)
+ 10. Port Connectivity Checks: "Adder:A6"
+ 11. Port Connectivity Checks: "Adder:A5"
+ 12. Port Connectivity Checks: "Adder:A4"
+ 13. Port Connectivity Checks: "Adder:A3"
+ 14. Port Connectivity Checks: "Adder:A2"
+ 15. Port Connectivity Checks: "Adder:A1|Partial_Full_Adder:\FPFA:51:PFA"
+ 16. Port Connectivity Checks: "Adder:A1"
+ 17. Port Connectivity Checks: "Booth_decoder:Booth_decoder6"
+ 18. Port Connectivity Checks: "Booth_decoder:Booth_decoder5"
+ 19. Port Connectivity Checks: "Booth_decoder:Booth_decoder4"
+ 20. Port Connectivity Checks: "Booth_decoder:Booth_decoder3"
+ 21. Port Connectivity Checks: "Booth_decoder:Booth_decoder2"
+ 22. Port Connectivity Checks: "Booth_decoder:Booth_decoder1|Sub_Adder:A7"
+ 23. Port Connectivity Checks: "Booth_decoder:Booth_decoder1"
+ 24. Port Connectivity Checks: "RCA:Adder2"
+ 25. Port Connectivity Checks: "RCA:Adder1"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Jun 26 11:10:50 2021       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; Capstone_v5                                 ;
+; Top-level Entity Name           ; Capstone_v5                                 ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 99                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; Capstone_v5        ; Capstone_v5        ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Restructure Multiplexers                                                        ; Off                ; Auto               ;
+; Optimization Technique                                                          ; Speed              ; Balanced           ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                              ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                 ; Library ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------+---------+
+; Adder.vhd                        ; yes             ; User VHDL File        ; F:/FPGA/Capstone/Capstone_v5/Adder.vhd       ;         ;
+; Sub_Adder.vhd                    ; yes             ; User VHDL File        ; F:/FPGA/Capstone/Capstone_v5/Sub_Adder.vhd   ;         ;
+; capstone_v5.vhd                  ; yes             ; Auto-Found VHDL File  ; F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd ;         ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 942        ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 1296       ;
+;     -- 7 input functions                    ; 192        ;
+;     -- 6 input functions                    ; 395        ;
+;     -- 5 input functions                    ; 193        ;
+;     -- 4 input functions                    ; 218        ;
+;     -- <=3 input functions                  ; 298        ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 99         ;
+;                                             ;            ;
+; Total DSP Blocks                            ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; y[3]~input ;
+; Maximum fan-out                             ; 63         ;
+; Total fan-out                               ; 6426       ;
+; Average fan-out                             ; 4.30       ;
++---------------------------------------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                 ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name         ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+---------------------+--------------+
+; |Capstone_v5                                ; 1296 (134)          ; 0 (0)                     ; 0                 ; 0          ; 99   ; 0            ; |Capstone_v5                                                                            ; Capstone_v5         ; work         ;
+;    |Adder:A1|                               ; 71 (26)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1                                                                   ; Adder               ; work         ;
+;       |Partial_Full_Adder:\FPFA:10:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:10:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:11:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:11:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:12:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:12:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:13:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:13:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:14:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:14:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:15:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:15:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:16:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:16:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:17:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:17:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:18:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:18:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:19:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:19:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:20:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:20:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:21:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:21:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:22:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:22:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:23:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:23:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:24:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:24:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:25:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:25:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:26:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:26:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:27:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:27:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:28:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:28:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:29:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:29:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:30:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:30:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:31:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:31:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:33:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:33:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:34:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:34:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:39:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:39:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:41:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:41:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:45:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:45:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:46:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:46:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:8:PFA|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A1|Partial_Full_Adder:\FPFA:8:PFA                                    ; Partial_Full_Adder  ; work         ;
+;    |Adder:A2|                               ; 71 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2                                                                   ; Adder               ; work         ;
+;       |Partial_Full_Adder:\FPFA:12:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:12:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:13:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:13:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:14:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:14:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:15:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:15:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:16:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:16:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:17:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:17:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:18:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:18:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:19:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:19:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:20:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:20:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:21:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:21:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:22:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:22:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:23:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:23:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:24:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:24:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:25:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:25:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:26:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:26:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:27:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:27:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:28:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:28:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:29:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:29:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:30:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:30:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:31:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:31:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:32:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:32:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:33:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:33:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:34:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:34:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:35:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:35:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:36:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:36:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:37:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:37:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:38:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:38:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:39:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:39:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:40:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:40:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:41:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:41:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:42:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:42:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:43:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A2|Partial_Full_Adder:\FPFA:43:PFA                                   ; Partial_Full_Adder  ; work         ;
+;    |Adder:A3|                               ; 45 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3                                                                   ; Adder               ; work         ;
+;       |Partial_Full_Adder:\FPFA:20:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:20:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:21:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:21:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:22:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:22:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:23:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:23:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:25:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:25:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:27:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:27:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:28:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:28:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:29:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:29:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:30:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:30:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:31:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:31:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:32:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:32:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:33:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:33:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:34:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:34:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:35:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:35:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:36:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:36:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:37:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:37:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:38:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:38:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:40:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:40:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:41:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:41:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:42:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:42:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:43:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:43:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:44:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:44:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:45:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:45:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:46:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A3|Partial_Full_Adder:\FPFA:46:PFA                                   ; Partial_Full_Adder  ; work         ;
+;    |Adder:A4|                               ; 77 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4                                                                   ; Adder               ; work         ;
+;       |Partial_Full_Adder:\FPFA:17:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:17:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:18:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:18:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:19:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:19:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:20:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:20:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:21:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:21:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:22:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:22:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:23:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:23:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:24:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:24:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:25:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:25:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:26:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:26:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:27:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:27:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:28:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:28:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:29:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:29:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:30:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:30:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:31:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:31:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:32:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:32:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:33:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:33:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:34:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:34:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:35:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:35:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:36:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:36:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:37:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:37:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:38:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:38:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:39:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:39:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:40:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:40:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:41:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:41:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:42:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:42:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:43:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:43:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:44:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:44:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:45:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:45:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:46:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A4|Partial_Full_Adder:\FPFA:46:PFA                                   ; Partial_Full_Adder  ; work         ;
+;    |Adder:A5|                               ; 37 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5                                                                   ; Adder               ; work         ;
+;       |Partial_Full_Adder:\FPFA:24:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:24:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:25:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:25:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:26:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:26:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:27:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:27:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:28:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:28:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:29:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:29:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:30:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:30:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:31:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:31:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:32:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:32:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:33:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:33:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:34:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:34:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:35:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:35:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:36:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:36:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:37:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:37:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:38:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:38:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:39:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:39:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:40:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:40:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:41:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:41:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:42:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:42:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:43:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:43:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:44:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:44:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:45:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:45:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:46:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A5|Partial_Full_Adder:\FPFA:46:PFA                                   ; Partial_Full_Adder  ; work         ;
+;    |Adder:A6|                               ; 69 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6                                                                   ; Adder               ; work         ;
+;       |Partial_Full_Adder:\FPFA:24:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:24:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:25:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:25:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:26:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:26:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:27:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:27:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:28:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:28:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:29:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:29:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:30:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:30:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:31:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:31:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:32:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:32:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:33:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:33:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:34:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:34:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:35:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:35:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:36:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:36:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:37:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:37:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:38:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:38:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:39:PFA|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:39:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:40:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:40:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:42:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:42:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:43:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:43:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:44:PFA|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:44:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:45:PFA|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:45:PFA                                   ; Partial_Full_Adder  ; work         ;
+;       |Partial_Full_Adder:\FPFA:47:PFA|     ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Adder:A6|Partial_Full_Adder:\FPFA:47:PFA                                   ; Partial_Full_Adder  ; work         ;
+;    |Booth_decoder:Booth_decoder1|           ; 144 (60)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1                                               ; Booth_decoder       ; work         ;
+;       |Sub_Adder:A7|                        ; 84 (44)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7                                  ; Sub_Adder           ; work         ;
+;          |Partial1_Full_Adder:\FPFA:10:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:10:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:11:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:11:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:12:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:12:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:13:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:13:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:14:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:14:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:15:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:15:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:16:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:16:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:17:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:17:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:18:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:18:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:19:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:19:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:20:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:20:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:21:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:21:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:22:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:22:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:23:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:23:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:24:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:24:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:25:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:25:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:26:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:26:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:27:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:27:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:28:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:28:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:29:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:29:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:5:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:5:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:6:PFA|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:6:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:7:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:7:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:8:PFA|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:8:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:9:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:9:PFA  ; Partial1_Full_Adder ; work         ;
+;    |Booth_decoder:Booth_decoder2|           ; 165 (82)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2                                               ; Booth_decoder       ; work         ;
+;       |Sub_Adder:A7|                        ; 83 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7                                  ; Sub_Adder           ; work         ;
+;          |Partial1_Full_Adder:\FPFA:10:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:10:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:11:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:11:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:12:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:12:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:13:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:13:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:14:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:14:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:15:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:15:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:16:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:16:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:17:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:17:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:18:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:18:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:19:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:19:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:20:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:20:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:21:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:21:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:22:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:22:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:23:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:23:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:24:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:24:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:25:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:25:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:26:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:26:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:27:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:27:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:28:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:28:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:29:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:29:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:2:PFA|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:2:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:3:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:3:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:4:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:4:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:5:PFA|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:5:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:6:PFA|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:6:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:7:PFA|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:7:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:8:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:8:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:9:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder2|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:9:PFA  ; Partial1_Full_Adder ; work         ;
+;    |Booth_decoder:Booth_decoder3|           ; 143 (76)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3                                               ; Booth_decoder       ; work         ;
+;       |Sub_Adder:A7|                        ; 67 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7                                  ; Sub_Adder           ; work         ;
+;          |Partial1_Full_Adder:\FPFA:10:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:10:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:11:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:11:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:12:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:12:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:13:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:13:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:14:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:14:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:15:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:15:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:16:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:16:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:17:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:17:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:18:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:18:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:19:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:19:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:20:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:20:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:21:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:21:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:22:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:22:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:23:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:23:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:24:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:24:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:25:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:25:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:26:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:26:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:27:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:27:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:28:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:28:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:29:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:29:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:2:PFA|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:2:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:3:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:3:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:4:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:4:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:5:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:5:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:6:PFA|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:6:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:7:PFA|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:7:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:8:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:8:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:9:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder3|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:9:PFA  ; Partial1_Full_Adder ; work         ;
+;    |Booth_decoder:Booth_decoder4|           ; 112 (63)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4                                               ; Booth_decoder       ; work         ;
+;       |Sub_Adder:A7|                        ; 49 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7                                  ; Sub_Adder           ; work         ;
+;          |Partial1_Full_Adder:\FPFA:10:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:10:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:11:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:11:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:12:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:12:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:13:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:13:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:14:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:14:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:15:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:15:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:16:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:16:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:17:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:17:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:18:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:18:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:19:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:19:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:20:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:20:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:21:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:21:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:22:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:22:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:23:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:23:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:24:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:24:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:25:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:25:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:26:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:26:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:27:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:27:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:28:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:28:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:29:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:29:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:2:PFA|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:2:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:3:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:3:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:4:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:4:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:5:PFA|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:5:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:6:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:6:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:7:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:7:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:8:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:8:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:9:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder4|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:9:PFA  ; Partial1_Full_Adder ; work         ;
+;    |Booth_decoder:Booth_decoder5|           ; 104 (54)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5                                               ; Booth_decoder       ; work         ;
+;       |Sub_Adder:A7|                        ; 50 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7                                  ; Sub_Adder           ; work         ;
+;          |Partial1_Full_Adder:\FPFA:10:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:10:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:11:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:11:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:12:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:12:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:13:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:13:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:14:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:14:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:15:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:15:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:16:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:16:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:17:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:17:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:18:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:18:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:19:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:19:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:20:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:20:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:21:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:21:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:22:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:22:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:23:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:23:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:24:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:24:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:25:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:25:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:26:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:26:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:27:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:27:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:28:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:28:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:30:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:30:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:3:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:3:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:4:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:4:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:5:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:5:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:6:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:6:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:7:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:7:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:8:PFA|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:8:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:9:PFA|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder5|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:9:PFA  ; Partial1_Full_Adder ; work         ;
+;    |Booth_decoder:Booth_decoder6|           ; 96 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6                                               ; Booth_decoder       ; work         ;
+;       |Sub_Adder:A7|                        ; 44 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7                                  ; Sub_Adder           ; work         ;
+;          |Partial1_Full_Adder:\FPFA:10:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:10:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:11:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:11:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:12:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:12:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:13:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:13:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:14:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:14:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:15:PFA| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:15:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:16:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:16:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:17:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:17:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:18:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:18:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:19:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:19:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:20:PFA| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:20:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:21:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:21:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:22:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:22:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:23:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:23:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:24:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:24:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:25:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:25:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:26:PFA| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:26:PFA ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:2:PFA|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:2:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:3:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:3:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:4:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:4:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:5:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:5:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:6:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:6:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:7:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:7:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:8:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:8:PFA  ; Partial1_Full_Adder ; work         ;
+;          |Partial1_Full_Adder:\FPFA:9:PFA|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|Booth_decoder:Booth_decoder6|Sub_Adder:A7|Partial1_Full_Adder:\FPFA:9:PFA  ; Partial1_Full_Adder ; work         ;
+;    |RCA:Adder1|                             ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|RCA:Adder1                                                                 ; RCA                 ; work         ;
+;    |RCA:Adder2|                             ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Capstone_v5|RCA:Adder2                                                                 ; RCA                 ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (No Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder1|Mux5  ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder1|Mux12 ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder6|Mux56 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |Capstone_v5|e1[6]                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Capstone_v5|exponential2[6]                    ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |Capstone_v5|exponential                        ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder1|Mux58 ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder2|Mux25 ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder2|Mux50 ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder3|Mux18 ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder3|Mux49 ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder4|Mux19 ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder4|Mux52 ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder5|Mux19 ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder5|Mux56 ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 92 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|Booth_decoder:Booth_decoder6|Mux13 ;
+; 6:1                ; 23 bits   ; 92 LEs        ; 69 LEs               ; 23 LEs                 ; No         ; |Capstone_v5|mantisa                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder:A6"                                                                                                                                         ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; cin       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; s[51..48] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; s[22..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; clock_50  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder:A5"                                                                                                                                         ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; y[51..48] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; y[23..0]  ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cin       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; clock_50  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder:A4"                                                                                                                                        ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; cin      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; clock_50 ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder:A3"                                                                                                                                        ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; x[15..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; y[19..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cin      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; clock_50 ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder:A2"                                                                                                                                        ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; x[7..0]  ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; y[11..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cin      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; clock_50 ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder:A1|Partial_Full_Adder:\FPFA:51:PFA"                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; p    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; g    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder:A1"                                                                                                                                        ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; y[3..0]  ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cin      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; clock_50 ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "Booth_decoder:Booth_decoder6" ;
++------------+-------+----------+--------------------------+
+; Port       ; Type  ; Severity ; Details                  ;
++------------+-------+----------+--------------------------+
+; c[4]       ; Input ; Info     ; Stuck at VCC             ;
+; x1[27..24] ; Input ; Info     ; Stuck at GND             ;
++------------+-------+----------+--------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "Booth_decoder:Booth_decoder5" ;
++------------+-------+----------+--------------------------+
+; Port       ; Type  ; Severity ; Details                  ;
++------------+-------+----------+--------------------------+
+; x1[27..24] ; Input ; Info     ; Stuck at GND             ;
++------------+-------+----------+--------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "Booth_decoder:Booth_decoder4" ;
++------------+-------+----------+--------------------------+
+; Port       ; Type  ; Severity ; Details                  ;
++------------+-------+----------+--------------------------+
+; x1[27..24] ; Input ; Info     ; Stuck at GND             ;
++------------+-------+----------+--------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "Booth_decoder:Booth_decoder3" ;
++------------+-------+----------+--------------------------+
+; Port       ; Type  ; Severity ; Details                  ;
++------------+-------+----------+--------------------------+
+; x1[27..24] ; Input ; Info     ; Stuck at GND             ;
++------------+-------+----------+--------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "Booth_decoder:Booth_decoder2" ;
++------------+-------+----------+--------------------------+
+; Port       ; Type  ; Severity ; Details                  ;
++------------+-------+----------+--------------------------+
+; x1[27..24] ; Input ; Info     ; Stuck at GND             ;
++------------+-------+----------+--------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Booth_decoder:Booth_decoder1|Sub_Adder:A7"                                                                                                       ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; y[1..0]  ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cin      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; clock_50 ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "Booth_decoder:Booth_decoder1" ;
++------------+-------+----------+--------------------------+
+; Port       ; Type  ; Severity ; Details                  ;
++------------+-------+----------+--------------------------+
+; c[0]       ; Input ; Info     ; Stuck at GND             ;
+; x1[27..24] ; Input ; Info     ; Stuck at GND             ;
++------------+-------+----------+--------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "RCA:Adder2"      ;
++-----------+-------+----------+--------------+
+; Port      ; Type  ; Severity ; Details      ;
++-----------+-------+----------+--------------+
+; in2[8..7] ; Input ; Info     ; Stuck at VCC ;
+; in2[6..1] ; Input ; Info     ; Stuck at GND ;
+; in2[0]    ; Input ; Info     ; Stuck at VCC ;
++-----------+-------+----------+--------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "RCA:Adder1"   ;
++--------+-------+----------+--------------+
+; Port   ; Type  ; Severity ; Details      ;
++--------+-------+----------+--------------+
+; in1[8] ; Input ; Info     ; Stuck at GND ;
+; in2[8] ; Input ; Info     ; Stuck at GND ;
++--------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1296                        ;
+;     arith             ; 34                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 23                          ;
+;         4 data inputs ; 8                           ;
+;     extend            ; 192                         ;
+;         7 data inputs ; 192                         ;
+;     normal            ; 1070                        ;
+;         2 data inputs ; 153                         ;
+;         3 data inputs ; 119                         ;
+;         4 data inputs ; 210                         ;
+;         5 data inputs ; 193                         ;
+;         6 data inputs ; 395                         ;
+; boundary_port         ; 99                          ;
+;                       ;                             ;
+; Max LUT depth         ; 29.30                       ;
+; Average LUT depth     ; 25.15                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:07     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat Jun 26 11:10:27 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Capstone_v5 -c Capstone_v5
+Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 4 design units, including 2 entities, in source file adder.vhd
+    Info (12022): Found design unit 1: Adder-rtl File: F:/FPGA/Capstone/Capstone_v5/Adder.vhd Line: 23
+    Info (12022): Found design unit 2: Partial_Full_Adder-Behavioral File: F:/FPGA/Capstone/Capstone_v5/Adder.vhd Line: 66
+    Info (12023): Found entity 1: Adder File: F:/FPGA/Capstone/Capstone_v5/Adder.vhd Line: 4
+    Info (12023): Found entity 2: Partial_Full_Adder File: F:/FPGA/Capstone/Capstone_v5/Adder.vhd Line: 57
+Info (12021): Found 4 design units, including 2 entities, in source file sub_adder.vhd
+    Info (12022): Found design unit 1: Sub_Adder-rtl File: F:/FPGA/Capstone/Capstone_v5/Sub_Adder.vhd Line: 26
+    Info (12022): Found design unit 2: Partial1_Full_Adder-Behavioral File: F:/FPGA/Capstone/Capstone_v5/Sub_Adder.vhd Line: 69
+    Info (12023): Found entity 1: Sub_Adder File: F:/FPGA/Capstone/Capstone_v5/Sub_Adder.vhd Line: 4
+    Info (12023): Found entity 2: Partial1_Full_Adder File: F:/FPGA/Capstone/Capstone_v5/Sub_Adder.vhd Line: 60
+Warning (12125): Using design file capstone_v5.vhd, which is not specified as a design file for the current project, but contains definitions for 6 design units and 3 entities in project
+    Info (12022): Found design unit 1: Capstone_v5-rtl File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 33
+    Info (12022): Found design unit 2: Booth_decoder-Behavioral File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 204
+    Info (12022): Found design unit 3: RCA-Behavioral File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 256
+    Info (12023): Found entity 1: Capstone_v5 File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 13
+    Info (12023): Found entity 2: Booth_decoder File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 198
+    Info (12023): Found entity 3: RCA File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 252
+Info (12127): Elaborating entity "Capstone_v5" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at capstone_v5.vhd(39): object "cr0" assigned a value but never read File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 39
+Warning (10036): Verilog HDL or VHDL warning at capstone_v5.vhd(39): object "cr1" assigned a value but never read File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 39
+Warning (10036): Verilog HDL or VHDL warning at capstone_v5.vhd(39): object "cr2" assigned a value but never read File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 39
+Warning (10036): Verilog HDL or VHDL warning at capstone_v5.vhd(39): object "cr3" assigned a value but never read File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 39
+Warning (10036): Verilog HDL or VHDL warning at capstone_v5.vhd(39): object "cr4" assigned a value but never read File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 39
+Warning (10036): Verilog HDL or VHDL warning at capstone_v5.vhd(39): object "cr5" assigned a value but never read File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(83): signal "zero" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(84): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 84
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(94): signal "and1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(94): signal "and2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(95): signal "zero" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(95): signal "or1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(95): signal "or2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(144): signal "x11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 144
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(162): signal "S5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(164): signal "underflow1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 164
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(167): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(172): signal "underflow1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(175): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(185): signal "and3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 185
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(186): signal "or3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 186
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(187): signal "overflow1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(187): signal "underflow1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(187): signal "mantisa1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 187
+Info (12128): Elaborating entity "RCA" for hierarchy "RCA:Adder1" File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 105
+Info (12128): Elaborating entity "Booth_decoder" for hierarchy "Booth_decoder:Booth_decoder1" File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 116
+Warning (10036): Verilog HDL or VHDL warning at capstone_v5.vhd(208): object "cr6" assigned a value but never read File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 208
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(221): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 221
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(222): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 222
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(223): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 223
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(224): signal "xb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 224
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(225): signal "xb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 225
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(226): signal "xb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 226
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(232): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 232
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(233): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(234): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 234
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(235): signal "xb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 235
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(236): signal "xb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 236
+Warning (10492): VHDL Process Statement warning at capstone_v5.vhd(237): signal "xb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 237
+Info (12128): Elaborating entity "Sub_Adder" for hierarchy "Booth_decoder:Booth_decoder1|Sub_Adder:A7" File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 242
+Info (12128): Elaborating entity "Partial1_Full_Adder" for hierarchy "Booth_decoder:Booth_decoder1|Sub_Adder:A7|Partial1_Full_Adder:FPFA0" File: F:/FPGA/Capstone/Capstone_v5/Sub_Adder.vhd Line: 45
+Info (12128): Elaborating entity "Adder" for hierarchy "Adder:A1" File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 149
+Info (12128): Elaborating entity "Partial_Full_Adder" for hierarchy "Adder:A1|Partial_Full_Adder:FPFA0" File: F:/FPGA/Capstone/Capstone_v5/Adder.vhd Line: 42
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: F:/FPGA/Capstone/Capstone_v5/capstone_v5.vhd Line: 23
+Info (21057): Implemented 1395 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 65 input pins
+    Info (21059): Implemented 34 output pins
+    Info (21061): Implemented 1296 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 4858 megabytes
+    Info: Processing ended: Sat Jun 26 11:10:50 2021
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:30
+
+
